@@ -1,8 +1,12 @@
 package noAuto.principal;
 
+import noAuto.principal.PantallaInicio;
+
 public class Principal {
 	public static void main(String[] args) {
-		System.out.println("Aupa Athletic");
+		PantallaInicio frame = new PantallaInicio();
+		frame.setVisible(true);
+		
 	}
 
 }
