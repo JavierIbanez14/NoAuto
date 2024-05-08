@@ -15,9 +15,13 @@ public class PantallaInicio extends JFrame implements ActionListener {
 	private JPanel contentPane;
 	private JMenuItem altaClienteMenuItem;
 	private JMenuItem bajaClienteMenuItem;
+	private JMenuItem listaClienteMenuItem;
 	private JMenuItem altaVehiculoMenuItem;
-	private JMenuItem bajaEnvioMenuItem;
-	private JMenuItem listadoMenMenuItem;
+	private JMenuItem bajaVehiculoMenuItem;
+	private JMenuItem modificarVehiculoMenuItem;
+	private JMenuItem listadoVehiculosMenMenuItem;
+	private JMenuItem listaUbicacionesMenuItem;
+	
 	
 	/**
 	 * Create the frame.
@@ -29,44 +33,48 @@ public class PantallaInicio extends JFrame implements ActionListener {
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
-		JMenu mensajeroMenu = new JMenu("Clientes");
-		menuBar.add(mensajeroMenu);
+		JMenu clientesMenu = new JMenu("Clientes");
+		menuBar.add(clientesMenu);
 		
 		altaClienteMenuItem = new JMenuItem("Alta Cliente");
-		mensajeroMenu.add(altaClienteMenuItem);
+		clientesMenu.add(altaClienteMenuItem);
 		altaClienteMenuItem.addActionListener(this);
 		
 		bajaClienteMenuItem = new JMenuItem("Baja Cliente");
-		mensajeroMenu.add(bajaClienteMenuItem);
+		clientesMenu.add(bajaClienteMenuItem);
 		bajaClienteMenuItem.addActionListener(this);
 		
-		JMenu envioMenu = new JMenu("Envio");
-		menuBar.add(envioMenu);
+		listaClienteMenuItem = new JMenuItem("Listado de Clientes");
+		clientesMenu.add(listaClienteMenuItem);
+		listaClienteMenuItem.addActionListener(this);
+		
+		JMenu vehiculoMenu = new JMenu("Vehiculos");
+		menuBar.add(vehiculoMenu);
 
 		
-		altaVehiculoMenuItem = new JMenuItem("Alta envio");
-		envioMenu.add(altaVehiculoMenuItem);
+		altaVehiculoMenuItem = new JMenuItem("Alta vehiculo");
+		vehiculoMenu.add(altaVehiculoMenuItem);
 		altaVehiculoMenuItem.addActionListener(this);
 		
-		bajaEnvioMenuItem = new JMenuItem("Baja Envio");
-		envioMenu.add(bajaEnvioMenuItem);
-		bajaEnvioMenuItem.addActionListener(this);
+		bajaVehiculoMenuItem = new JMenuItem("Baja Vehiculo");
+		vehiculoMenu.add(bajaVehiculoMenuItem);
+		bajaVehiculoMenuItem.addActionListener(this);
 		
-		JMenuItem asignarEnvioMenuItem = new JMenuItem("Asignar Envio");
-		envioMenu.add(asignarEnvioMenuItem);
+		JMenuItem modificarVehiculoMenuItem = new JMenuItem("Modificar vehiculo");
+		vehiculoMenu.add(modificarVehiculoMenuItem);
 		
-		JMenuItem entregaEnvioMenuItem = new JMenuItem("Entrega Envio");
-		envioMenu.add(entregaEnvioMenuItem);
+		JMenuItem listaVehiculosMenuItem = new JMenuItem("Listado de vehiculos");
+		vehiculoMenu.add(listaVehiculosMenuItem);
 		
-		JMenu listadosMenu = new JMenu("Listados");
-		menuBar.add(listadosMenu);
+		JMenu ubicacionMenu = new JMenu("Ubicaciones");
+		menuBar.add(ubicacionMenu);
 		
-		listadoMenMenuItem = new JMenuItem("Listado mensajeros");
-		listadosMenu.add(listadoMenMenuItem);
-		listadoMenMenuItem.addActionListener(this);
+		JMenuItem listaUbicacionesMenuItem = new JMenuItem("Listado de vehiculos");
+		vehiculoMenu.add(listaUbicacionesMenuItem);
 		
-		JMenuItem EnviosEsperasMenuItem = new JMenuItem("Envios en Espera");
-		listadosMenu.add(EnviosEsperasMenuItem);
+		JMenu noAutoMenu = new JMenu("NoAuto");
+		menuBar.add(noAutoMenu);
+		
 		
 
 		contentPane = new JPanel();
