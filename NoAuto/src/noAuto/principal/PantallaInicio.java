@@ -21,6 +21,8 @@ public class PantallaInicio extends JFrame implements ActionListener {
 	private JMenuItem modificarVehiculoMenuItem;
 	private JMenuItem listadoVehiculosMenMenuItem;
 	private JMenuItem listaUbicacionesMenuItem;
+	private JMenuItem alquilarVehiculoMenuItem;
+	private JMenuItem devolverVehiculoMenuItem;
 	
 	
 	/**
@@ -74,6 +76,14 @@ public class PantallaInicio extends JFrame implements ActionListener {
 		
 		JMenu noAutoMenu = new JMenu("NoAuto");
 		menuBar.add(noAutoMenu);
+		
+		JMenuItem alquilarVehiculoMenuItem = new JMenuItem("Alquiler de vehiculos");
+		vehiculoMenu.add(alquilarVehiculoMenuItem);
+		
+		JMenuItem devolverVehiculoMenuItem = new JMenuItem("Devolucion de vehiculos");
+		vehiculoMenu.add(devolverVehiculoMenuItem);
+		
+		
 		
 		
 
