@@ -25,11 +25,6 @@ public class Vehiculo {
 		this.Ubicacion = Ubicacion;
 	}
 
-	public Vehiculo(double coste2, TipoVehiculo tipoVehiculo2, TipoEstado estado2, TipoCargaVehiculo carga2,
-			TipoUbicacion ubicacion2) {
-		// TODO Auto-generated constructor stub
-	}
-
 	public double getCoste() {
 		return coste;
 	}
@@ -81,8 +76,9 @@ public class Vehiculo {
 	}
 	
 	// Alta Vehículo
-    public void altaVehiculo(double coste, TipoVehiculo tipoVehiculo, TipoEstado estado, TipoCargaVehiculo carga, TipoUbicacion ubicacion) {
-        Vehiculo nuevoVehiculo = new Vehiculo(coste, tipoVehiculo, estado, carga, ubicacion);
+    public void altaVehiculo(int coste, TipoVehiculo tipoVehiculo, TipoEstado Estado, TipoCargaVehiculo Carga,
+			TipoUbicacion Ubicacion) {
+        Vehiculo nuevoVehiculo = new Vehiculo(coste, tipoVehiculo, Estado, Carga, Ubicacion);
         vehiculos.add(nuevoVehiculo);
     }
 
