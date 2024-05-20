@@ -1,5 +1,9 @@
 package noAuto.principal;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Iterator;
+
 public class Vehiculo {
 	private static int cont = 1;
 	private int codigo;
@@ -8,6 +12,8 @@ public class Vehiculo {
 	private TipoEstado Estado;
 	private TipoCargaVehiculo Carga;
 	private TipoUbicacion Ubicacion;
+	
+	 private List<Vehiculo> vehiculos;
 
 	public Vehiculo(int coste, TipoVehiculo tipoVehiculo, TipoEstado Estado, TipoCargaVehiculo Carga,
 			TipoUbicacion Ubicacion) {
@@ -68,5 +74,36 @@ public class Vehiculo {
 		return "Vehiculo [codigo=" + codigo + ", coste=" + coste + ", tipoVehiculo=" + tipoVehiculo + ", Estado="
 				+ Estado + ", Carga=" + Carga + ", Ubicacion=" + Ubicacion + "]";
 	}
+	
+	// Alta Vehículo
+    public void altaVehiculo(double coste, TipoVehiculo tipoVehiculo, TipoEstado estado, TipoCargaVehiculo carga, TipoUbicacion ubicacion) {
+        Vehiculo nuevoVehiculo = new Vehiculo(coste, tipoVehiculo, estado, carga, ubicacion);
+        vehiculos.add(nuevoVehiculo);
+    }
+
+    // Baja Vehículo
+    public void bajaVehiculo(int codigo) {
+        Iterator<Vehiculo> iterator = vehiculos.iterator();
+        while (iterator.hasNext()) {
+            Vehiculo vehiculo = iterator.next();
+            if (vehiculo.getCodigo() == codigo) {
+                iterator.remove();
+                break;
+            }
+        }
+    }
+
+    // Modificar Vehículo
+    public void modificarVehiculo(int codigo, TipoUbicacion nuevaUbicacion, TipoCargaVehiculo nuevaCarga) {
+        for (Vehiculo vehiculo : vehiculos) {
+            if (vehiculo.getCodigo() == codigo) {
+                vehiculo.setUbicacion(nuevaUbicacion);
+                vehiculo.setCarga(nuevaCarga);
+                break;
+            }
+        }
+    }
+
 
 }
+
