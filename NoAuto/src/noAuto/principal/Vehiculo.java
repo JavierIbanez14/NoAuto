@@ -25,6 +25,11 @@ public class Vehiculo {
 		this.Ubicacion = Ubicacion;
 	}
 
+	public Vehiculo(double coste2, TipoVehiculo tipoVehiculo2, TipoEstado estado2, TipoCargaVehiculo carga2,
+			TipoUbicacion ubicacion2) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public double getCoste() {
 		return coste;
 	}
