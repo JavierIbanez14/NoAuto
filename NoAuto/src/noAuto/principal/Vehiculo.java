@@ -103,7 +103,14 @@ public class Vehiculo {
                 break;
             }
         }
+        
+      //Listado vehiculos
+        for (Vehiculo vehiculo : vehiculos) {
+        	System.out.println(vehiculo);
+        }
     }
+    
+    
 
 
 }
