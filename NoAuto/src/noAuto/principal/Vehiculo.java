@@ -12,8 +12,8 @@ public class Vehiculo {
 	private TipoEstado Estado;
 	private TipoCargaVehiculo Carga;
 	private TipoUbicacion Ubicacion;
-	
-	 private List<Vehiculo> vehiculos;
+
+	private List<Vehiculo> vehiculos;
 
 	public Vehiculo(int coste, TipoVehiculo tipoVehiculo, TipoEstado Estado, TipoCargaVehiculo Carga,
 			TipoUbicacion Ubicacion) {
@@ -74,44 +74,50 @@ public class Vehiculo {
 		return "Vehiculo [codigo=" + codigo + ", coste=" + coste + ", tipoVehiculo=" + tipoVehiculo + ", Estado="
 				+ Estado + ", Carga=" + Carga + ", Ubicacion=" + Ubicacion + "]";
 	}
-	
+
 	// Alta Vehículo
-    public void altaVehiculo(int coste, TipoVehiculo tipoVehiculo, TipoEstado Estado, TipoCargaVehiculo Carga,
+	public void altaVehiculo(int coste, TipoVehiculo tipoVehiculo, TipoEstado Estado, TipoCargaVehiculo Carga,
 			TipoUbicacion Ubicacion) {
-        Vehiculo nuevoVehiculo = new Vehiculo(coste, tipoVehiculo, Estado, Carga, Ubicacion);
-        vehiculos.add(nuevoVehiculo);
-    }
+		Vehiculo nuevoVehiculo = new Vehiculo(coste, tipoVehiculo, Estado, Carga, Ubicacion);
+		vehiculos.add(nuevoVehiculo);
+	}
 
-    // Baja Vehículo
-    public void bajaVehiculo(int codigo) {
-        Iterator<Vehiculo> iterator = vehiculos.iterator();
-        while (iterator.hasNext()) {
-            Vehiculo vehiculo = iterator.next();
-            if (vehiculo.getCodigo() == codigo) {
-                iterator.remove();
-                break;
-            }
-        }
-    }
+	// Baja Vehículo
+	public void bajaVehiculo(int codigo) {
+		Iterator<Vehiculo> iterator = vehiculos.iterator();
+		while (iterator.hasNext()) {
+			Vehiculo vehiculo = iterator.next();
+			if (vehiculo.getCodigo() == codigo) {
+				iterator.remove();
+				break;
+			}
+		}
+	}
 
-    // Modificar Vehículo
-    public void modificarVehiculo(int codigo, TipoUbicacion nuevaUbicacion, TipoCargaVehiculo nuevaCarga) {
+	// Modificar Vehículo
+	public void modificarVehiculo(int codigo, TipoUbicacion nuevaUbicacion, TipoCargaVehiculo nuevaCarga) {
+		for (Vehiculo vehiculo : vehiculos) {
+			if (vehiculo.getCodigo() == codigo) {
+				vehiculo.setUbicacion(nuevaUbicacion);
+				vehiculo.setCarga(nuevaCarga);
+				break;
+			}
+		}
+
+		// Listado vehiculos
+		for (Vehiculo vehiculo : vehiculos) {
+			System.out.println(vehiculo);
+		}
+	}
+
+	// buscar vehiculos
+	public static Vehiculo buscarPorCodigo(int codigo, List<Vehiculo> vehiculos) {
         for (Vehiculo vehiculo : vehiculos) {
             if (vehiculo.getCodigo() == codigo) {
-                vehiculo.setUbicacion(nuevaUbicacion);
-                vehiculo.setCarga(nuevaCarga);
-                break;
+                return vehiculo;
             }
         }
-        
-      //Listado vehiculos
-        for (Vehiculo vehiculo : vehiculos) {
-        	System.out.println(vehiculo);
-        }
+        return null;
     }
-    
-    
-
 
 }
-
