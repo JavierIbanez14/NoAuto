@@ -1,4 +1,4 @@
-package noAuto.principal;
+package noAuto.modelo;
 
 import java.util.ArrayList;
 import java.util.List;

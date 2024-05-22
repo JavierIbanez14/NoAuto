@@ -1,4 +1,4 @@
-package noAuto.vista;
+package VistasClientes;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;

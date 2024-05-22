@@ -8,7 +8,7 @@ package noAuto.principal;
 	import javax.swing.JMenuBar;
 	import javax.swing.JMenuItem;
 
-import noAuto.vista.AltaVehiculoVista;
+import VistasVehiculo.AltaVehiculoVista;
 
 	public class Menu extends JFrame implements ActionListener{ // Esto sera el menu de nuestra aplicacion donde añadiremos las opciones
 		// JFrame
