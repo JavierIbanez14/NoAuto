@@ -15,10 +15,10 @@ public class Vehiculo {
 
 	private List<Vehiculo> vehiculos;
 
-	public Vehiculo(int coste, TipoVehiculo tipoVehiculo, TipoEstado Estado, TipoCargaVehiculo Carga,
+	public Vehiculo(double coste2, TipoVehiculo tipoVehiculo, TipoEstado Estado, TipoCargaVehiculo Carga,
 			TipoUbicacion Ubicacion) {
 		this.codigo = cont++;
-		this.coste = coste;
+		this.coste = coste2;
 		this.tipoVehiculo = tipoVehiculo;
 		this.Estado = Estado;
 		this.Carga = Carga;
@@ -75,14 +75,14 @@ public class Vehiculo {
 				+ Estado + ", Carga=" + Carga + ", Ubicacion=" + Ubicacion + "]";
 	}
 
-	// Alta Vehículo
+	// Alta Vehï¿½culo
 	public void altaVehiculo(int coste, TipoVehiculo tipoVehiculo, TipoEstado Estado, TipoCargaVehiculo Carga,
 			TipoUbicacion Ubicacion) {
 		Vehiculo nuevoVehiculo = new Vehiculo(coste, tipoVehiculo, Estado, Carga, Ubicacion);
 		vehiculos.add(nuevoVehiculo);
 	}
 
-	// Baja Vehículo
+	// Baja Vehï¿½culo
 	public void bajaVehiculo(int codigo) {
 		Iterator<Vehiculo> iterator = vehiculos.iterator();
 		while (iterator.hasNext()) {
@@ -94,7 +94,7 @@ public class Vehiculo {
 		}
 	}
 
-	// Modificar Vehículo
+	// Modificar Vehï¿½culo
 	public void modificarVehiculo(int codigo, TipoUbicacion nuevaUbicacion, TipoCargaVehiculo nuevaCarga) {
 		for (Vehiculo vehiculo : vehiculos) {
 			if (vehiculo.getCodigo() == codigo) {

@@ -34,5 +34,4 @@ public class BajaClienteVista extends JPanel {
 		CodigoClienteField.setColumns(10);
 
 	}
-
 }

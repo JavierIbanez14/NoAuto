@@ -10,12 +10,11 @@ public class Cliente {
 	private double dinero;
 	private Vehiculo vehiculo;
 
-	public Cliente(String nombre, String dni, int edad, double dinero) {
+	public Cliente(String nombre, String dni, int edad) {
 		this.codigo = cont++;
 		this.nombre = nombre;
 		this.dni = dni;
 		this.edad = edad;
-		this.dinero = dinero;
 	}
 
 	public int getCodigo() {
@@ -63,7 +62,7 @@ public class Cliente {
 	}
 
 	public void listarCliente() {
-		System.out.println("Código: " + codigo);
+		System.out.println("Cï¿½digo: " + codigo);
 		System.out.println("Nombre: " + nombre);
 		System.out.println("DNI: " + dni);
 		System.out.println("Edad: " + edad);
@@ -73,7 +72,7 @@ public class Cliente {
 	public void altaVehiculoAlCliente(int codigoVehiculo, int horas) {
 		Vehiculo vehiculo = Vehiculo.buscarPorCodigo(codigoVehiculo, null);
 		if (vehiculo == null) {
-			System.out.println("Vehículo con código " + codigoVehiculo + " no encontrado.");
+			System.out.println("Vehï¿½culo con cï¿½digo " + codigoVehiculo + " no encontrado.");
 			return;
 		}
 
@@ -84,9 +83,9 @@ public class Cliente {
 				vehiculo.setEstado(TipoEstado.Alquilado);
 			}
 			setVehiculo(vehiculo);
-			System.out.println("Vehículo dado de alta al cliente " + codigo + ".");
+			System.out.println("Vehï¿½culo dado de alta al cliente " + codigo + ".");
 		} else {
-			System.out.println("El coste total del vehículo excede el dinero disponible del cliente.");
+			System.out.println("El coste total del vehï¿½culo excede el dinero disponible del cliente.");
 		}
 	}
 
@@ -94,18 +93,18 @@ public class Cliente {
 		if (vehiculo != null) {
 			vehiculo.setEstado(TipoEstado.Disponible);
 			vehiculo = null;
-			System.out.println("Vehículo dado de baja al cliente " + codigo + ".");
+			System.out.println("Vehï¿½culo dado de baja al cliente " + codigo + ".");
 		} else {
-			System.out.println("El cliente " + codigo + " no tiene un vehículo asignado.");
+			System.out.println("El cliente " + codigo + " no tiene un vehï¿½culo asignado.");
 		}
 	}
 
 	public void mostrarQueVehiculoTieneElCliente() {
 		if (vehiculo != null) {
-			System.out.println("El cliente " + codigo + " tiene el siguiente vehículo:");
+			System.out.println("El cliente " + codigo + " tiene el siguiente vehï¿½culo:");
 			System.out.println(vehiculo);
 		} else {
-			System.out.println("El cliente " + codigo + " no tiene un vehículo asignado.");
+			System.out.println("El cliente " + codigo + " no tiene un vehï¿½culo asignado.");
 		}
 	}
 }

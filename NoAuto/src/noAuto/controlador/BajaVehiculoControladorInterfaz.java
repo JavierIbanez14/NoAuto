@@ -1,5 +1,5 @@
 package noAuto.controlador;
 
 public interface BajaVehiculoControladorInterfaz {
-	 void bajaVehiculo(int codigo);
+    void bajaVehiculo(int codigo);
 }
