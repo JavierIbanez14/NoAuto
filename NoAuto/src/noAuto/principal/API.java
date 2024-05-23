@@ -86,7 +86,7 @@ public class API {
     public String mostrarClientes() {
         StringBuilder stringBuilder = new StringBuilder();
         for (Cliente cliente : clientes) {
-            stringBuilder.append("Código: ").append(cliente.getCodigo()).append("\n");
+            stringBuilder.append("Codigo: ").append(cliente.getCodigo()).append("\n");
             stringBuilder.append("Nombre: ").append(cliente.getNombre()).append("\n");
             stringBuilder.append("DNI: ").append(cliente.getDni()).append("\n");
             stringBuilder.append("Edad: ").append(cliente.getEdad()).append("\n");

@@ -32,7 +32,7 @@ public class Menu extends JFrame implements ActionListener {
         setJMenuBar(menubar);
         
         // Vehículos
-        JMenu vehiculoMenu = new JMenu("Vehículo");
+        JMenu vehiculoMenu = new JMenu("Vehiculo");
         menubar.add(vehiculoMenu);
 
         altaVehiculo = new JMenuItem("Alta");
