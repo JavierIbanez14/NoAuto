@@ -1,4 +1,4 @@
-package noAuto.controlador;
+package controladorVehiculos;
 
 public interface MostrarVehiculoControladorInterfaz {
     String mostrarVehiculos();

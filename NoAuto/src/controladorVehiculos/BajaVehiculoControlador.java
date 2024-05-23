@@ -1,4 +1,4 @@
-package noAuto.controlador;
+package controladorVehiculos;
 
 import noAuto.principal.API;
 

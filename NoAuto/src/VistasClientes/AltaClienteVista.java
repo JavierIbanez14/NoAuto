@@ -7,65 +7,64 @@ import javax.swing.JButton;
 
 public class AltaClienteVista extends JPanel {
 
-	private static final long serialVersionUID = 1L;
-	private JTextField NombreField;
-	private JTextField DNIField;
-	private JTextField EdadField;
-	private JLabel DNILabel;
-	private JLabel EdadLabel;
-	private JLabel DineroLabel;
-	private JTextField DineroField;
-	private JLabel NombreAlta;
+    private static final long serialVersionUID = 1L;
+    private JTextField nombreField;
+    private JTextField dniField;
+    private JTextField edadField;
+    private JLabel dniLabel;
+    private JLabel edadLabel;
+    private JLabel dineroLabel;
+    private JTextField dineroField;
+    private JLabel nombreAlta;
 
-	/**
-	 * Create the panel.
-	 */
-	public AltaClienteVista() {
-		setLayout(null);
-		
-		JLabel NombreLabel = new JLabel("Nombre");
-		NombreLabel.setBounds(38, 62, 102, 14);
-		add(NombreLabel);
-		
-		NombreField = new JTextField();
-		NombreField.setBounds(150, 59, 86, 20);
-		add(NombreField);
-		NombreField.setColumns(10);
-		
-		DNIField = new JTextField();
-		DNIField.setBounds(150, 90, 86, 20);
-		add(DNIField);
-		DNIField.setColumns(10);
-		
-		EdadField = new JTextField();
-		EdadField.setBounds(150, 121, 86, 20);
-		add(EdadField);
-		EdadField.setColumns(10);
-		
-		DNILabel = new JLabel("DNI");
-		DNILabel.setBounds(38, 93, 102, 14);
-		add(DNILabel);
-		
-		EdadLabel = new JLabel("Edad");
-		EdadLabel.setBounds(38, 127, 102, 14);
-		add(EdadLabel);
-		
-		DineroLabel = new JLabel("Dinero");
-		DineroLabel.setBounds(38, 154, 102, 14);
-		add(DineroLabel);
-		
-		DineroField = new JTextField();
-		DineroField.setColumns(10);
-		DineroField.setBounds(150, 151, 86, 20);
-		add(DineroField);
-		
-		NombreAlta = new JLabel("Alta Cliente");
-		NombreAlta.setBounds(150, 21, 102, 14);
-		add(NombreAlta);
-		
-		JButton Finalizar = new JButton("Finalizar");
-		Finalizar.setBounds(305, 266, 89, 23);
-		add(Finalizar);
-
-	}
+    /**
+     * Create the panel.
+     */
+    public AltaClienteVista() {
+        setLayout(null);
+        
+        JLabel nombreLabel = new JLabel("Nombre");
+        nombreLabel.setBounds(38, 62, 102, 14);
+        add(nombreLabel);
+        
+        nombreField = new JTextField();
+        nombreField.setBounds(150, 59, 86, 20);
+        add(nombreField);
+        nombreField.setColumns(10);
+        
+        dniField = new JTextField();
+        dniField.setBounds(150, 90, 86, 20);
+        add(dniField);
+        dniField.setColumns(10);
+        
+        edadField = new JTextField();
+        edadField.setBounds(150, 121, 86, 20);
+        add(edadField);
+        edadField.setColumns(10);
+        
+        dniLabel = new JLabel("DNI");
+        dniLabel.setBounds(38, 93, 102, 14);
+        add(dniLabel);
+        
+        edadLabel = new JLabel("Edad");
+        edadLabel.setBounds(38, 127, 102, 14);
+        add(edadLabel);
+        
+        dineroLabel = new JLabel("Dinero");
+        dineroLabel.setBounds(38, 154, 102, 14);
+        add(dineroLabel);
+        
+        dineroField = new JTextField();
+        dineroField.setColumns(10);
+        dineroField.setBounds(150, 151, 86, 20);
+        add(dineroField);
+        
+        nombreAlta = new JLabel("Alta Cliente");
+        nombreAlta.setBounds(150, 21, 102, 14);
+        add(nombreAlta);
+        
+        JButton finalizar = new JButton("Finalizar");
+        finalizar.setBounds(305, 266, 89, 23);
+        add(finalizar);
+    }
 }

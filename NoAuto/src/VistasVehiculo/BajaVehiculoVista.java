@@ -3,9 +3,14 @@ package VistasVehiculo;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+
+import controladorVehiculos.BajaVehiculoControlador;
+import controladorVehiculos.BajaVehiculoControladorInterfaz;
+
 import javax.swing.JButton;
-import noAuto.controlador.BajaVehiculoControlador;
-import noAuto.controlador.BajaVehiculoControladorInterfaz;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class BajaVehiculoVista extends JPanel {
 
@@ -20,7 +25,7 @@ public class BajaVehiculoVista extends JPanel {
         BajaVehiculotitulo.setBounds(180, 11, 100, 14);
         add(BajaVehiculotitulo);
 
-        JLabel lblCodigoVehiculo = new JLabel("Codigo del Vehiculo");
+        JLabel lblCodigoVehiculo = new JLabel("Codigo del Vehiculo:");
         lblCodigoVehiculo.setBounds(59, 64, 120, 14);
         add(lblCodigoVehiculo);
 
@@ -29,15 +34,22 @@ public class BajaVehiculoVista extends JPanel {
         add(CodigoVehiculoField);
         CodigoVehiculoField.setColumns(10);
 
-        JButton BajaVehiculoButton = new JButton("Finalizar");
+        JButton BajaVehiculoButton = new JButton("Eliminar");
         BajaVehiculoButton.setBounds(180, 100, 89, 23);
         add(BajaVehiculoButton);
 
-        BajaVehiculoButton.addActionListener(e -> {
-            int codigo = Integer.parseInt(CodigoVehiculoField.getText());
-            controlador.bajaVehiculo(codigo);
+        BajaVehiculoButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    int codigo = Integer.parseInt(CodigoVehiculoField.getText());
+                    controlador.bajaVehiculo(codigo);
+                } catch (NumberFormatException ex) {
+                    System.out.println("Error: El código debe ser un número válido.");
+                }
+            }
         });
 
         controlador = new BajaVehiculoControlador();
     }
 }
+

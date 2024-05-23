@@ -2,9 +2,11 @@ package VistasVehiculo;
 
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+
+import controladorVehiculos.MostrarVehiculoControlador;
+import controladorVehiculos.MostrarVehiculoControladorInterfaz;
+
 import javax.swing.JButton;
-import noAuto.controlador.MostrarVehiculoControlador;
-import noAuto.controlador.MostrarVehiculoControladorInterfaz;
 
 public class MostrarVehiculoVista extends JPanel {
 
@@ -20,7 +22,7 @@ public class MostrarVehiculoVista extends JPanel {
         add(textArea);
 
         JButton mostrarVehiculosButton = new JButton("Mostrar Vehiculos");
-        mostrarVehiculosButton.setBounds(140, 220, 120, 23);
+        mostrarVehiculosButton.setBounds(140, 220, 150, 23);
         add(mostrarVehiculosButton);
 
         mostrarVehiculosButton.addActionListener(e -> {
