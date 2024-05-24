@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Cliente {
-    private static int cont = 0;
+    private static int cont = 1;
     private int codigo;
     private String nombre;
     private String dni;

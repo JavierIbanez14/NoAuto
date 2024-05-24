@@ -120,9 +120,14 @@ public class API {
         if (cliente != null) {
             Vehiculo vehiculo = cliente.getVehiculo();
             if (vehiculo != null) {
-                vehiculo.setEstado(TipoEstado.Disponible);
-                cliente.setVehiculo(null);
-                System.out.println("Vehículo dado de baja al cliente " + codigoCliente + ".");
+            	for (Vehiculo buscarVehiculo : vehiculos) {
+					if (buscarVehiculo.getCodigo()==vehiculo.getCodigo()) {
+						buscarVehiculo.setEstado(TipoEstado.Disponible);
+						cliente.setVehiculo(null);
+		                System.out.println("Vehículo dado de baja al cliente " + codigoCliente + ".");
+		                break;
+					}
+				}
             } else {
                 System.out.println("El cliente " + codigoCliente + " no tiene un vehículo asignado.");
             }
