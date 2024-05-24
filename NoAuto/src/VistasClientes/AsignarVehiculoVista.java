@@ -6,6 +6,8 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import controladorCliente.AsignarVehiculoControladorInterfaz;
+import java.awt.Font;
+import java.awt.Color;
 
 public class AsignarVehiculoVista extends JPanel {
 
@@ -17,40 +19,55 @@ public class AsignarVehiculoVista extends JPanel {
     private AsignarVehiculoControladorInterfaz controlador;
 
     public AsignarVehiculoVista(AsignarVehiculoControladorInterfaz controlador) {
+    	setBackground(new Color(0, 128, 50));
         this.controlador = controlador;
         setLayout(null);
 
         JLabel asignarVehiculoLabel = new JLabel("Asignar Vehículo a Cliente");
-        asignarVehiculoLabel.setBounds(150, 10, 200, 20);
+        asignarVehiculoLabel.setForeground(new Color(255, 255, 255));
+        asignarVehiculoLabel.setFont(new Font("Arial", Font.PLAIN, 20));
+        asignarVehiculoLabel.setBounds(88, 41, 280, 20);
         add(asignarVehiculoLabel);
 
         JLabel codigoClienteLabel = new JLabel("Código del Cliente");
-        codigoClienteLabel.setBounds(30, 50, 150, 20);
+        codigoClienteLabel.setForeground(new Color(255, 255, 255));
+        codigoClienteLabel.setFont(new Font("Arial", Font.PLAIN, 16));
+        codigoClienteLabel.setBounds(68, 97, 150, 20);
         add(codigoClienteLabel);
 
         codigoClienteField = new JTextField();
-        codigoClienteField.setBounds(180, 50, 150, 20);
+        codigoClienteField.setBounds(218, 97, 150, 20);
         add(codigoClienteField);
 
         JLabel codigoVehiculoLabel = new JLabel("Código del Vehículo");
-        codigoVehiculoLabel.setBounds(30, 80, 150, 20);
+        codigoVehiculoLabel.setForeground(new Color(255, 255, 255));
+        codigoVehiculoLabel.setFont(new Font("Arial", Font.PLAIN, 16));
+        codigoVehiculoLabel.setBounds(68, 127, 150, 20);
         add(codigoVehiculoLabel);
 
         codigoVehiculoField = new JTextField();
-        codigoVehiculoField.setBounds(180, 80, 150, 20);
+        codigoVehiculoField.setBounds(218, 127, 150, 20);
         add(codigoVehiculoField);
 
         JLabel horasLabel = new JLabel("Horas");
-        horasLabel.setBounds(30, 110, 150, 20);
+        horasLabel.setForeground(new Color(255, 255, 255));
+        horasLabel.setFont(new Font("Arial", Font.PLAIN, 16));
+        horasLabel.setBounds(68, 157, 150, 20);
         add(horasLabel);
 
         horasField = new JTextField();
-        horasField.setBounds(180, 110, 150, 20);
+        horasField.setBounds(218, 157, 150, 20);
         add(horasField);
 
         finalizarButton = new JButton("Asignar");
-        finalizarButton.setBounds(150, 150, 100, 30);
+        finalizarButton.setBounds(176, 206, 100, 30);
         add(finalizarButton);
+        
+        JLabel lblNoautoAlquilerDe = new JLabel("NoAuto alquiler de vehiculos sostenibles");
+        lblNoautoAlquilerDe.setForeground(Color.WHITE);
+        lblNoautoAlquilerDe.setFont(new Font("Arial", Font.ITALIC, 12));
+        lblNoautoAlquilerDe.setBounds(99, 275, 315, 14);
+        add(lblNoautoAlquilerDe);
 
         finalizarButton.addActionListener(e -> asignarVehiculo());
     }

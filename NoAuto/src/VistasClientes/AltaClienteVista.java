@@ -7,6 +7,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import controladorCliente.AltaClienteControladorInterfaz;
+import java.awt.Color;
+import java.awt.Font;
 
 public class AltaClienteVista extends JPanel {
 
@@ -19,53 +21,71 @@ public class AltaClienteVista extends JPanel {
     private JLabel dineroLabel;
     private JTextField dineroField;
     private JLabel nombreAlta;
+    private JLabel lblNoautoAlquilerDe;
 
     public AltaClienteVista(AltaClienteControladorInterfaz controlador) {
+    	setBackground(new Color(0, 128, 50));
         setLayout(null);
         
         JLabel nombreLabel = new JLabel("Nombre");
-        nombreLabel.setBounds(38, 62, 102, 14);
+        nombreLabel.setForeground(new Color(255, 255, 255));
+        nombreLabel.setFont(new Font("Arial", Font.PLAIN, 16));
+        nombreLabel.setBounds(120, 65, 102, 14);
         add(nombreLabel);
         
         nombreField = new JTextField();
-        nombreField.setBounds(150, 59, 86, 20);
+        nombreField.setBounds(232, 62, 86, 20);
         add(nombreField);
         nombreField.setColumns(10);
         
         dniField = new JTextField();
-        dniField.setBounds(150, 90, 86, 20);
+        dniField.setBounds(232, 93, 86, 20);
         add(dniField);
         dniField.setColumns(10);
         
         edadField = new JTextField();
-        edadField.setBounds(150, 121, 86, 20);
+        edadField.setBounds(232, 124, 86, 20);
         add(edadField);
         edadField.setColumns(10);
         
         dniLabel = new JLabel("DNI");
-        dniLabel.setBounds(38, 93, 102, 14);
+        dniLabel.setForeground(new Color(255, 255, 255));
+        dniLabel.setFont(new Font("Arial", Font.PLAIN, 16));
+        dniLabel.setBounds(120, 96, 102, 14);
         add(dniLabel);
         
         edadLabel = new JLabel("Edad");
-        edadLabel.setBounds(38, 127, 102, 14);
+        edadLabel.setForeground(new Color(255, 255, 255));
+        edadLabel.setFont(new Font("Arial", Font.PLAIN, 16));
+        edadLabel.setBounds(120, 130, 102, 14);
         add(edadLabel);
         
-        dineroLabel = new JLabel("Dinero");
-        dineroLabel.setBounds(38, 154, 102, 14);
+        dineroLabel = new JLabel("Saldo");
+        dineroLabel.setForeground(new Color(255, 255, 255));
+        dineroLabel.setFont(new Font("Arial", Font.PLAIN, 16));
+        dineroLabel.setBounds(120, 157, 102, 14);
         add(dineroLabel);
         
         dineroField = new JTextField();
         dineroField.setColumns(10);
-        dineroField.setBounds(150, 151, 86, 20);
+        dineroField.setBounds(232, 154, 86, 20);
         add(dineroField);
         
         nombreAlta = new JLabel("Alta Cliente");
-        nombreAlta.setBounds(150, 21, 102, 14);
+        nombreAlta.setForeground(new Color(255, 255, 255));
+        nombreAlta.setFont(new Font("Arial", Font.PLAIN, 20));
+        nombreAlta.setBounds(165, 29, 102, 14);
         add(nombreAlta);
         
-        JButton finalizar = new JButton("Finalizar");
-        finalizar.setBounds(305, 266, 89, 23);
+        JButton finalizar = new JButton("Dar alta");
+        finalizar.setBounds(178, 210, 89, 23);
         add(finalizar);
+        
+        lblNoautoAlquilerDe = new JLabel("NoAuto alquiler de vehiculos sostenibles");
+        lblNoautoAlquilerDe.setForeground(Color.WHITE);
+        lblNoautoAlquilerDe.setFont(new Font("Arial", Font.ITALIC, 12));
+        lblNoautoAlquilerDe.setBounds(98, 275, 315, 14);
+        add(lblNoautoAlquilerDe);
         
         finalizar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

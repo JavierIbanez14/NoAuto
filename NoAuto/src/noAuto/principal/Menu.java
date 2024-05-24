@@ -1,11 +1,16 @@
 package noAuto.principal;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.SwingConstants;
+
 import controladorCliente.AltaClienteControlador;
 import controladorCliente.AltaClienteControladorInterfaz;
 import controladorCliente.AsignarVehiculoControlador;
@@ -24,6 +29,9 @@ import VistasVehiculo.AltaVehiculoVista;
 import VistasVehiculo.BajaVehiculoVista;
 import VistasVehiculo.MostrarVehiculoVista;
 import controladorCliente.AsignarVehiculoControladorInterfaz;
+import java.awt.BorderLayout;
+import javax.swing.JTextArea;
+import java.awt.GridLayout;
 
 public class Menu extends JFrame implements ActionListener {
 
@@ -36,8 +44,24 @@ public class Menu extends JFrame implements ActionListener {
     private JMenuItem mostrarClientes;
     private JMenuItem alquilarVehiculo;
     private JMenuItem desasignarVehiculo;
+    private JLabel lblNoauto;
+    private JLabel lblAlquilerDeVehiculos;
 
     public Menu() {
+    	getContentPane().setBackground(new Color(0, 128, 50));
+    	getContentPane().setLayout(null);
+    	
+    	lblNoauto = new JLabel("NoAuto ");
+    	lblNoauto.setForeground(Color.WHITE);
+    	lblNoauto.setFont(new Font("Arial", Font.BOLD, 55));
+    	lblNoauto.setBounds(81, 45, 315, 84);
+    	getContentPane().add(lblNoauto);
+    	
+    	lblAlquilerDeVehiculos = new JLabel("Alquiler de vehiculos sostenibles");
+    	lblAlquilerDeVehiculos.setForeground(Color.WHITE);
+    	lblAlquilerDeVehiculos.setFont(new Font("Arial", Font.ITALIC, 20));
+    	lblAlquilerDeVehiculos.setBounds(43, 99, 315, 68);
+    	getContentPane().add(lblAlquilerDeVehiculos);
         System.out.println("Cargando Menu");
         setBounds(0, 0, 400, 300);
         setTitle("NoAuto");
