@@ -36,7 +36,7 @@ public class AltaVehiculoVista extends JPanel {
     	setBackground(new Color(0, 128, 50));
         setLayout(null);
 
-        JLabel AltaVehiculoTitulo = new JLabel("Alta Vehículo");
+        JLabel AltaVehiculoTitulo = new JLabel("Alta Vehiculo");
         AltaVehiculoTitulo.setFont(new Font("Arial", Font.PLAIN, 20));
         AltaVehiculoTitulo.setForeground(new Color(255, 255, 255));
         AltaVehiculoTitulo.setBounds(144, 29, 185, 14);

@@ -14,13 +14,13 @@ public class MostrarClientesVista extends JPanel {
 
     private static final long serialVersionUID = 1L;
     private JTextArea textArea;
-    private JButton mostrarClientesButton; // Declaración del botón como campo de clase
+    private JButton mostrarClientesButton;
     private MostrarClientesControladorInterfaz controlador;
     private JLabel lblNoautoAlquilerDe;
 
     public MostrarClientesVista(MostrarClientesControladorInterfaz controlador) {
     	setBackground(new Color(0, 128, 50));
-        this.controlador = controlador; // Guardamos una referencia al controlador
+        this.controlador = controlador; 
         setLayout(null);
 
         JScrollPane scrollPane = new JScrollPane();
@@ -30,7 +30,7 @@ public class MostrarClientesVista extends JPanel {
         textArea = new JTextArea();
         scrollPane.setViewportView(textArea);
 
-        mostrarClientesButton = new JButton("Mostrar Clientes"); // Inicialización del botón
+        mostrarClientesButton = new JButton("Mostrar Clientes"); 
         mostrarClientesButton.setBounds(173, 228, 120, 23);
         add(mostrarClientesButton);
         
@@ -40,11 +40,8 @@ public class MostrarClientesVista extends JPanel {
         lblNoautoAlquilerDe.setBounds(112, 275, 315, 14);
         add(lblNoautoAlquilerDe);
 
-        // Agregamos un ActionListener al botón para manejar el evento de clic
         mostrarClientesButton.addActionListener(e -> {
-            // Cuando se hace clic en el botón, solicitamos al controlador que nos proporcione la lista de clientes
             String clientes = controlador.mostrarClientes();
-            // Luego, establecemos el texto en el JTextArea con la lista de clientes recibida
             textArea.setText(clientes);
         });
     }

@@ -10,7 +10,7 @@ public class AltaVehiculoControlador implements AltaVehiculoControladorInterfaz 
 
     @Override
     public void altaVehiculo(double coste, TipoVehiculo tipoVehiculo, TipoEstado tipoEstado, TipoCargaVehiculo tipoCarga, TipoUbicacion tipoUbicacion) {
-        System.out.println("Llamando al controlador de alta de vehículo");
+        System.out.println("Llamando al controlador de alta de vehiculo");
         API api = API.getInstancia();
         api.altaVehiculo(coste, tipoVehiculo, tipoEstado, tipoCarga, tipoUbicacion);
     }

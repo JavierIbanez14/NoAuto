@@ -25,7 +25,7 @@ public class MostrarVehiculoVista extends JPanel {
         textArea.setBounds(35, 24, 380, 153);
         add(textArea);
 
-        JButton mostrarVehiculosButton = new JButton("Mostrar Vehículos");
+        JButton mostrarVehiculosButton = new JButton("Mostrar Vehiculo");
         mostrarVehiculosButton.setBounds(150, 205, 150, 23);
         add(mostrarVehiculosButton);
         

@@ -24,13 +24,13 @@ public class BajaVehiculoVista extends JPanel {
     	setBackground(new Color(0, 128, 50));
         setLayout(null);
 
-        JLabel BajaVehiculotitulo = new JLabel("Baja Vehículo");
+        JLabel BajaVehiculotitulo = new JLabel("Baja Vehiculo");
         BajaVehiculotitulo.setForeground(new Color(255, 255, 255));
         BajaVehiculotitulo.setFont(new Font("Arial", Font.PLAIN, 20));
         BajaVehiculotitulo.setBounds(166, 65, 198, 14);
         add(BajaVehiculotitulo);
 
-        JLabel lblCodigoVehiculo = new JLabel("Código del Vehículo:");
+        JLabel lblCodigoVehiculo = new JLabel("Codigo de Vehiculo:");
         lblCodigoVehiculo.setForeground(new Color(255, 255, 255));
         lblCodigoVehiculo.setFont(new Font("Arial", Font.PLAIN, 16));
         lblCodigoVehiculo.setBounds(41, 141, 168, 14);

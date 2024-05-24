@@ -6,7 +6,7 @@ public class MostrarVehiculoControlador implements MostrarVehiculoControladorInt
 
     @Override
     public String mostrarVehiculos() {
-        System.out.println("Llamando al controlador para mostrar vehículos");
+        System.out.println("Llamando al controlador para mostrar vehiculos");
         API api = API.getInstancia();
         return api.listarVehiculos();
     }
