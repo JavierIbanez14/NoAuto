@@ -116,24 +116,21 @@ public class API {
     }
 
     public void bajaVehiculoAlCliente(int codigoCliente) {
-        Cliente cliente = buscarClientePorCodigo(codigoCliente);
-        if (cliente != null) {
-            Vehiculo vehiculo = cliente.getVehiculo();
-            if (vehiculo != null) {
-            	for (Vehiculo buscarVehiculo : vehiculos) {
-					if (buscarVehiculo.getCodigo()==vehiculo.getCodigo()) {
-						buscarVehiculo.setEstado(TipoEstado.Disponible);
+    	for (Cliente cliente : clientes) {
+			if (cliente.getCodigo()==codigoCliente) {
+				for (Vehiculo vehiculo : vehiculos) {
+					if(vehiculo.getCodigo()==cliente.getVehiculo().getCodigo()) {
+						vehiculo.setEstado(TipoEstado.Disponible);
 						cliente.setVehiculo(null);
-		                System.out.println("Vehículo dado de baja al cliente " + codigoCliente + ".");
-		                break;
+						System.out.println("Dado de baja");
+					}else {
+						System.out.println("Cliente sin vehiculo alquilado");
 					}
 				}
-            } else {
-                System.out.println("El cliente " + codigoCliente + " no tiene un vehículo asignado.");
-            }
-        } else {
-            System.out.println("Cliente con código " + codigoCliente + " no encontrado.");
-        }
+			}else {
+				System.out.println("Cliente no encontrado");
+			}
+		}
     }
 
     public void mostrarQueVehiculoTieneElCliente(int codigoCliente) {
@@ -159,6 +156,5 @@ public class API {
         }
         return null;
     }
-    
 }
 
