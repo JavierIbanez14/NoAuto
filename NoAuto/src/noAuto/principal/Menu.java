@@ -63,7 +63,7 @@ public class Menu extends JFrame implements ActionListener {
     	lblAlquilerDeVehiculos.setBounds(43, 99, 315, 68);
     	getContentPane().add(lblAlquilerDeVehiculos);
         System.out.println("Cargando Menu");
-        setBounds(0, 0, 400, 300);
+        setBounds(0, 0, 450, 450);
         setTitle("NoAuto");
 
         JMenuBar menubar = new JMenuBar();
