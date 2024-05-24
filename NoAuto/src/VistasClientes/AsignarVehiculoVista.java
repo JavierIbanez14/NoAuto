@@ -23,13 +23,13 @@ public class AsignarVehiculoVista extends JPanel {
         this.controlador = controlador;
         setLayout(null);
 
-        JLabel asignarVehiculoLabel = new JLabel("Asignar Vehículo a Cliente");
+        JLabel asignarVehiculoLabel = new JLabel("Asignar vehiculo a cliente");
         asignarVehiculoLabel.setForeground(new Color(255, 255, 255));
         asignarVehiculoLabel.setFont(new Font("Arial", Font.PLAIN, 20));
         asignarVehiculoLabel.setBounds(88, 41, 280, 20);
         add(asignarVehiculoLabel);
 
-        JLabel codigoClienteLabel = new JLabel("Código del Cliente");
+        JLabel codigoClienteLabel = new JLabel("Codigo del cliente");
         codigoClienteLabel.setForeground(new Color(255, 255, 255));
         codigoClienteLabel.setFont(new Font("Arial", Font.PLAIN, 16));
         codigoClienteLabel.setBounds(68, 97, 150, 20);
@@ -39,7 +39,7 @@ public class AsignarVehiculoVista extends JPanel {
         codigoClienteField.setBounds(218, 97, 150, 20);
         add(codigoClienteField);
 
-        JLabel codigoVehiculoLabel = new JLabel("Código del Vehículo");
+        JLabel codigoVehiculoLabel = new JLabel("Codigo del vehiculo");
         codigoVehiculoLabel.setForeground(new Color(255, 255, 255));
         codigoVehiculoLabel.setFont(new Font("Arial", Font.PLAIN, 16));
         codigoVehiculoLabel.setBounds(68, 127, 150, 20);
@@ -79,7 +79,7 @@ public class AsignarVehiculoVista extends JPanel {
             int horas = Integer.parseInt(horasField.getText());
             controlador.asignarVehiculoAlCliente(codigoCliente, codigoVehiculo, horas);
         } catch (NumberFormatException e) {
-            System.out.println("Por favor, ingrese valores válidos.");
+            System.out.println("Ingrese los valores validos");
         }
     }
 }

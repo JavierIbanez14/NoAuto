@@ -44,7 +44,7 @@ public class BajaVehiculoClienteVista extends JPanel {
         add(desasignarButton);
 
         resultadoLabel = new JLabel("");
-        resultadoLabel.setBounds(10, 90, 250, 25);
+        resultadoLabel.setBounds(95, 129, 250, 25);
         add(resultadoLabel);
         
         lblNoautoAlquilerDe = new JLabel("NoAuto alquiler de vehiculos sostenibles");
@@ -52,6 +52,12 @@ public class BajaVehiculoClienteVista extends JPanel {
         lblNoautoAlquilerDe.setFont(new Font("Arial", Font.ITALIC, 12));
         lblNoautoAlquilerDe.setBounds(108, 263, 315, 14);
         add(lblNoautoAlquilerDe);
+        
+        JLabel lblDejarVehiculo = new JLabel("Dejar Vehiculo");
+        lblDejarVehiculo.setForeground(Color.WHITE);
+        lblDejarVehiculo.setFont(new Font("Arial", Font.PLAIN, 16));
+        lblDejarVehiculo.setBounds(176, 25, 113, 25);
+        add(lblDejarVehiculo);
     }
 
     private void configurarEventos() {
@@ -61,12 +67,12 @@ public class BajaVehiculoClienteVista extends JPanel {
                 try {
                     int clienteID = Integer.parseInt(clienteIDField.getText());
                     if (controlador.desasignarVehiculo(clienteID)) {
-                        resultadoLabel.setText("Vehículo desasignado con éxito.");
+                        resultadoLabel.setText("Vehiculo Dejado Correctamente");
                     } else {
-                        resultadoLabel.setText("Error al desasignar el vehículo.");
+                        resultadoLabel.setText("Error a Dejar Vehiculo");
                     }
                 } catch (NumberFormatException ex) {
-                    resultadoLabel.setText("ID de Cliente inválida.");
+                    resultadoLabel.setText("ID de Cliente no Valido");
                 }
             }
         });

@@ -69,7 +69,7 @@ public class Menu extends JFrame implements ActionListener {
         JMenuBar menubar = new JMenuBar();
         setJMenuBar(menubar);
 
-        // Vehículos
+        // Vehiculo
         JMenu vehiculoMenu = new JMenu("Vehiculo");
         menubar.add(vehiculoMenu);
 
@@ -110,7 +110,7 @@ public class Menu extends JFrame implements ActionListener {
         alquilarVehiculo.addActionListener(this);
 
         // DesasignarVehiculo
-        desasignarVehiculo = new JMenuItem("Desasignar Vehículo");
+        desasignarVehiculo = new JMenuItem("Desasignar vehiculo");
         AlquilerVehiculoMenu.add(desasignarVehiculo);
         desasignarVehiculo.addActionListener(this);
     }
@@ -118,19 +118,19 @@ public class Menu extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == altaVehiculo) {
-            System.out.println("Evento recogido alta vehículo");
+            System.out.println("Evento recogido alta vehiculo");
             AltaVehiculoVista altaVehiculoVista = new AltaVehiculoVista();
             setContentPane(altaVehiculoVista);
             setVisible(true);
 
         } else if (e.getSource() == bajaVehiculo) {
-            System.out.println("Evento recogido baja vehículo");
+            System.out.println("Evento recogido baja vehiculo");
             BajaVehiculoVista bajaVehiculoVista = new BajaVehiculoVista();
             setContentPane(bajaVehiculoVista);
             setVisible(true);
 
         } else if (e.getSource() == mostrarVehiculos) {
-            System.out.println("Evento recogido mostrar vehículos");
+            System.out.println("Evento recogido mostrar vehiculo");
             MostrarVehiculoVista mostrarVehiculoVista = new MostrarVehiculoVista();
             setContentPane(mostrarVehiculoVista);
             setVisible(true);
@@ -169,6 +169,5 @@ public class Menu extends JFrame implements ActionListener {
             setContentPane(bajaVehiculoClienteVista);
             setVisible(true);
         }
-        // Aquí puedes agregar el código para manejar otras opciones del menú
     }
 }
