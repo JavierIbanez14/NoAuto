@@ -18,6 +18,8 @@ import controladorCliente.BajaClienteControlador;
 import controladorCliente.BajaClienteControladorInterfaz;
 import controladorCliente.MostrarClientesControlador;
 import controladorCliente.MostrarClientesControladorInterfaz;
+import controladorVehiculos.ModificarVehiculoControlador;
+import controladorVehiculos.modificarVehiculoControladorInterfaz;
 import controladorCliente.DesasignarVehiculoControlador;
 import controladorCliente.DesasignarVehiculoControladorInterfaz;
 import VistasClientes.AltaClienteVista;
@@ -27,6 +29,7 @@ import VistasClientes.MostrarClientesVista;
 import VistasClientes.BajaVehiculoClienteVista;
 import VistasVehiculo.AltaVehiculoVista;
 import VistasVehiculo.BajaVehiculoVista;
+import VistasVehiculo.ModificarVehiculoVista;
 import VistasVehiculo.MostrarVehiculoVista;
 import controladorCliente.AsignarVehiculoControladorInterfaz;
 import java.awt.BorderLayout;
@@ -39,6 +42,7 @@ public class Menu extends JFrame implements ActionListener {
     private JMenuItem altaVehiculo;
     private JMenuItem bajaVehiculo;
     private JMenuItem mostrarVehiculos;
+    private JMenuItem modificarVehiculos;
     private JMenuItem altaCliente;
     private JMenuItem bajaCliente;
     private JMenuItem mostrarClientes;
@@ -84,6 +88,10 @@ public class Menu extends JFrame implements ActionListener {
         mostrarVehiculos = new JMenuItem("Mostrar");
         vehiculoMenu.add(mostrarVehiculos);
         mostrarVehiculos.addActionListener(this);
+        
+        modificarVehiculos = new JMenuItem("Modificar");
+        vehiculoMenu.add(modificarVehiculos);
+        modificarVehiculos.addActionListener(this);
 
         // Clientes
         JMenu clienteMenu = new JMenu("Clientes");
@@ -167,6 +175,13 @@ public class Menu extends JFrame implements ActionListener {
             DesasignarVehiculoControladorInterfaz controlador = new DesasignarVehiculoControlador();
             BajaVehiculoClienteVista bajaVehiculoClienteVista = new BajaVehiculoClienteVista(controlador);
             setContentPane(bajaVehiculoClienteVista);
+            setVisible(true);
+        }
+        else if (e.getSource() == modificarVehiculos) {
+            System.out.println("Evento recogido Desasignar vehiculo de cliente");
+            modificarVehiculoControladorInterfaz controlador = new ModificarVehiculoControlador();
+            ModificarVehiculoVista modificarVehiculoVista = new ModificarVehiculoVista();
+            setContentPane(modificarVehiculoVista);
             setVisible(true);
         }
     }
