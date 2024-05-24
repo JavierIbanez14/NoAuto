@@ -161,5 +161,17 @@ public class API {
         }
         return null;
     }
+    public void modificarCliente(int codigo, String nombre, String dni, int edad, int dinero) {
+        Cliente cliente = buscarClientePorCodigo(codigo);
+        if (cliente != null) {
+            cliente.setNombre(nombre);
+            cliente.setDni(dni);
+            cliente.setEdad(edad);
+            cliente.setDinero(dinero);
+            System.out.println("Cliente con código " + codigo + " modificado correctamente.");
+        } else {
+            System.out.println("Cliente con código " + codigo + " no encontrado.");
+        }
+    }
 }
 

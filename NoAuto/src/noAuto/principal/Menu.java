@@ -27,6 +27,7 @@ import VistasClientes.AsignarVehiculoVista;
 import VistasClientes.BajaClienteVista;
 import VistasClientes.MostrarClientesVista;
 import VistasClientes.BajaVehiculoClienteVista;
+import VistasClientes.ModificarClienteVista;
 import VistasVehiculo.AltaVehiculoVista;
 import VistasVehiculo.BajaVehiculoVista;
 import VistasVehiculo.ModificarVehiculoVista;
@@ -38,151 +39,160 @@ import java.awt.GridLayout;
 
 public class Menu extends JFrame implements ActionListener {
 
-    private static final long serialVersionUID = 1L;
-    private JMenuItem altaVehiculo;
-    private JMenuItem bajaVehiculo;
-    private JMenuItem mostrarVehiculos;
-    private JMenuItem modificarVehiculos;
-    private JMenuItem altaCliente;
-    private JMenuItem bajaCliente;
-    private JMenuItem mostrarClientes;
-    private JMenuItem alquilarVehiculo;
-    private JMenuItem desasignarVehiculo;
-    private JLabel lblNoauto;
-    private JLabel lblAlquilerDeVehiculos;
+	private static final long serialVersionUID = 1L;
+	private JMenuItem altaVehiculo;
+	private JMenuItem bajaVehiculo;
+	private JMenuItem mostrarVehiculos;
+	private JMenuItem modificarVehiculos;
+	private JMenuItem altaCliente;
+	private JMenuItem bajaCliente;
+	private JMenuItem mostrarClientes;
+	private JMenuItem modificarCliente;
+	private JMenuItem alquilarVehiculo;
+	private JMenuItem desasignarVehiculo;
+	private JLabel lblNoauto;
+	private JLabel lblAlquilerDeVehiculos;
 
-    public Menu() {
-    	getContentPane().setBackground(new Color(0, 128, 50));
-    	getContentPane().setLayout(null);
-    	
-    	lblNoauto = new JLabel("NoAuto ");
-    	lblNoauto.setForeground(Color.WHITE);
-    	lblNoauto.setFont(new Font("Arial", Font.BOLD, 55));
-    	lblNoauto.setBounds(81, 45, 315, 84);
-    	getContentPane().add(lblNoauto);
-    	
-    	lblAlquilerDeVehiculos = new JLabel("Alquiler de vehiculos sostenibles");
-    	lblAlquilerDeVehiculos.setForeground(Color.WHITE);
-    	lblAlquilerDeVehiculos.setFont(new Font("Arial", Font.ITALIC, 20));
-    	lblAlquilerDeVehiculos.setBounds(43, 99, 315, 68);
-    	getContentPane().add(lblAlquilerDeVehiculos);
-        System.out.println("Cargando Menu");
-        setBounds(0, 0, 450, 450);
-        setTitle("NoAuto");
+	public Menu() {
+		getContentPane().setBackground(new Color(0, 128, 50));
+		getContentPane().setLayout(null);
 
-        JMenuBar menubar = new JMenuBar();
-        setJMenuBar(menubar);
+		lblNoauto = new JLabel("NoAuto ");
+		lblNoauto.setForeground(Color.WHITE);
+		lblNoauto.setFont(new Font("Arial", Font.BOLD, 55));
+		lblNoauto.setBounds(81, 45, 315, 84);
+		getContentPane().add(lblNoauto);
 
-        // Vehiculo
-        JMenu vehiculoMenu = new JMenu("Vehiculo");
-        menubar.add(vehiculoMenu);
+		lblAlquilerDeVehiculos = new JLabel("Alquiler de vehiculos sostenibles");
+		lblAlquilerDeVehiculos.setForeground(Color.WHITE);
+		lblAlquilerDeVehiculos.setFont(new Font("Arial", Font.ITALIC, 20));
+		lblAlquilerDeVehiculos.setBounds(43, 99, 315, 68);
+		getContentPane().add(lblAlquilerDeVehiculos);
+		System.out.println("Cargando Menu");
+		setBounds(0, 0, 450, 450);
+		setTitle("NoAuto");
 
-        altaVehiculo = new JMenuItem("Alta");
-        vehiculoMenu.add(altaVehiculo);
-        altaVehiculo.addActionListener(this);
+		JMenuBar menubar = new JMenuBar();
+		setJMenuBar(menubar);
 
-        bajaVehiculo = new JMenuItem("Baja");
-        vehiculoMenu.add(bajaVehiculo);
-        bajaVehiculo.addActionListener(this);
+		// Vehiculo
+		JMenu vehiculoMenu = new JMenu("Vehiculo");
+		menubar.add(vehiculoMenu);
 
-        mostrarVehiculos = new JMenuItem("Mostrar");
-        vehiculoMenu.add(mostrarVehiculos);
-        mostrarVehiculos.addActionListener(this);
-        
-        modificarVehiculos = new JMenuItem("Modificar");
-        vehiculoMenu.add(modificarVehiculos);
-        modificarVehiculos.addActionListener(this);
+		altaVehiculo = new JMenuItem("Alta");
+		vehiculoMenu.add(altaVehiculo);
+		altaVehiculo.addActionListener(this);
 
-        // Clientes
-        JMenu clienteMenu = new JMenu("Clientes");
-        menubar.add(clienteMenu);
+		bajaVehiculo = new JMenuItem("Baja");
+		vehiculoMenu.add(bajaVehiculo);
+		bajaVehiculo.addActionListener(this);
 
-        altaCliente = new JMenuItem("Alta");
-        clienteMenu.add(altaCliente);
-        altaCliente.addActionListener(this);
+		mostrarVehiculos = new JMenuItem("Mostrar");
+		vehiculoMenu.add(mostrarVehiculos);
+		mostrarVehiculos.addActionListener(this);
 
-        bajaCliente = new JMenuItem("Baja");
-        clienteMenu.add(bajaCliente);
-        bajaCliente.addActionListener(this);
+		modificarVehiculos = new JMenuItem("Modificar");
+		vehiculoMenu.add(modificarVehiculos);
+		modificarVehiculos.addActionListener(this);
 
-        mostrarClientes = new JMenuItem("Mostrar");
-        clienteMenu.add(mostrarClientes);
-        mostrarClientes.addActionListener(this);
+		// Clientes
+		JMenu clienteMenu = new JMenu("Clientes");
+		menubar.add(clienteMenu);
 
-        // AlquilarVehiculo
-        JMenu AlquilerVehiculoMenu = new JMenu("Alquilar");
-        menubar.add(AlquilerVehiculoMenu);
+		altaCliente = new JMenuItem("Alta");
+		clienteMenu.add(altaCliente);
+		altaCliente.addActionListener(this);
 
-        alquilarVehiculo = new JMenuItem("Alquilar");
-        AlquilerVehiculoMenu.add(alquilarVehiculo);
-        alquilarVehiculo.addActionListener(this);
+		bajaCliente = new JMenuItem("Baja");
+		clienteMenu.add(bajaCliente);
+		bajaCliente.addActionListener(this);
 
-        // DesasignarVehiculo
-        desasignarVehiculo = new JMenuItem("Desasignar vehiculo");
-        AlquilerVehiculoMenu.add(desasignarVehiculo);
-        desasignarVehiculo.addActionListener(this);
-    }
+		mostrarClientes = new JMenuItem("Mostrar");
+		clienteMenu.add(mostrarClientes);
+		mostrarClientes.addActionListener(this);
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == altaVehiculo) {
-            System.out.println("Evento recogido alta vehiculo");
-            AltaVehiculoVista altaVehiculoVista = new AltaVehiculoVista();
-            setContentPane(altaVehiculoVista);
-            setVisible(true);
+		modificarCliente = new JMenuItem("Modificar");
+		clienteMenu.add(modificarCliente);
+		modificarCliente.addActionListener(this);
 
-        } else if (e.getSource() == bajaVehiculo) {
-            System.out.println("Evento recogido baja vehiculo");
-            BajaVehiculoVista bajaVehiculoVista = new BajaVehiculoVista();
-            setContentPane(bajaVehiculoVista);
-            setVisible(true);
+		// AlquilarVehiculo
+		JMenu AlquilerVehiculoMenu = new JMenu("Alquilar");
+		menubar.add(AlquilerVehiculoMenu);
 
-        } else if (e.getSource() == mostrarVehiculos) {
-            System.out.println("Evento recogido mostrar vehiculo");
-            MostrarVehiculoVista mostrarVehiculoVista = new MostrarVehiculoVista();
-            setContentPane(mostrarVehiculoVista);
-            setVisible(true);
+		alquilarVehiculo = new JMenuItem("Alquilar");
+		AlquilerVehiculoMenu.add(alquilarVehiculo);
+		alquilarVehiculo.addActionListener(this);
 
-        } else if (e.getSource() == altaCliente) {
-            System.out.println("Evento recogido alta cliente");
-            AltaClienteControladorInterfaz controlador = new AltaClienteControlador();
-            AltaClienteVista altaClienteVista = new AltaClienteVista(controlador);
-            setContentPane(altaClienteVista);
-            setVisible(true);
+		// DesasignarVehiculo
+		desasignarVehiculo = new JMenuItem("Desasignar vehiculo");
+		AlquilerVehiculoMenu.add(desasignarVehiculo);
+		desasignarVehiculo.addActionListener(this);
+	}
 
-        } else if (e.getSource() == bajaCliente) {
-            System.out.println("Evento recogido baja cliente");
-            BajaClienteControladorInterfaz controlador = new BajaClienteControlador();
-            BajaClienteVista bajaClienteVista = new BajaClienteVista(controlador);
-            setContentPane(bajaClienteVista);
-            setVisible(true);
-        } else if (e.getSource() == mostrarClientes) {
-            System.out.println("Evento recogido mostrar cliente");
-            MostrarClientesControladorInterfaz controlador = new MostrarClientesControlador();
-            MostrarClientesVista mostrarClienteVista = new MostrarClientesVista(controlador);
-            setContentPane(mostrarClienteVista);
-            setVisible(true);
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == altaVehiculo) {
+			System.out.println("Evento recogido alta vehiculo");
+			AltaVehiculoVista altaVehiculoVista = new AltaVehiculoVista();
+			setContentPane(altaVehiculoVista);
+			setVisible(true);
 
-        } else if (e.getSource() == alquilarVehiculo) {
-            System.out.println("Evento recogido Alquilar vehiculo a cliente");
-            AsignarVehiculoControladorInterfaz controlador = new AsignarVehiculoControlador();
-            AsignarVehiculoVista mostrarClienteVista = new AsignarVehiculoVista(controlador);
-            setContentPane(mostrarClienteVista);
-            setVisible(true);
+		} else if (e.getSource() == bajaVehiculo) {
+			System.out.println("Evento recogido baja vehiculo");
+			BajaVehiculoVista bajaVehiculoVista = new BajaVehiculoVista();
+			setContentPane(bajaVehiculoVista);
+			setVisible(true);
 
-        } else if (e.getSource() == desasignarVehiculo) {
-            System.out.println("Evento recogido Desasignar vehiculo de cliente");
-            DesasignarVehiculoControladorInterfaz controlador = new DesasignarVehiculoControlador();
-            BajaVehiculoClienteVista bajaVehiculoClienteVista = new BajaVehiculoClienteVista(controlador);
-            setContentPane(bajaVehiculoClienteVista);
-            setVisible(true);
-        }
-        else if (e.getSource() == modificarVehiculos) {
-            System.out.println("Evento recogido Desasignar vehiculo de cliente");
-            modificarVehiculoControladorInterfaz controlador = new ModificarVehiculoControlador();
-            ModificarVehiculoVista modificarVehiculoVista = new ModificarVehiculoVista();
-            setContentPane(modificarVehiculoVista);
-            setVisible(true);
-        }
-    }
+		} else if (e.getSource() == mostrarVehiculos) {
+			System.out.println("Evento recogido mostrar vehiculo");
+			MostrarVehiculoVista mostrarVehiculoVista = new MostrarVehiculoVista();
+			setContentPane(mostrarVehiculoVista);
+			setVisible(true);
+
+		} else if (e.getSource() == altaCliente) {
+			System.out.println("Evento recogido alta cliente");
+			AltaClienteControladorInterfaz controlador = new AltaClienteControlador();
+			AltaClienteVista altaClienteVista = new AltaClienteVista(controlador);
+			setContentPane(altaClienteVista);
+			setVisible(true);
+
+		} else if (e.getSource() == bajaCliente) {
+			System.out.println("Evento recogido baja cliente");
+			BajaClienteControladorInterfaz controlador = new BajaClienteControlador();
+			BajaClienteVista bajaClienteVista = new BajaClienteVista(controlador);
+			setContentPane(bajaClienteVista);
+			setVisible(true);
+		} else if (e.getSource() == mostrarClientes) {
+			System.out.println("Evento recogido mostrar cliente");
+			MostrarClientesControladorInterfaz controlador = new MostrarClientesControlador();
+			MostrarClientesVista mostrarClienteVista = new MostrarClientesVista(controlador);
+			setContentPane(mostrarClienteVista);
+			setVisible(true);
+
+		} else if (e.getSource() == alquilarVehiculo) {
+			System.out.println("Evento recogido Alquilar vehiculo a cliente");
+			AsignarVehiculoControladorInterfaz controlador = new AsignarVehiculoControlador();
+			AsignarVehiculoVista mostrarClienteVista = new AsignarVehiculoVista(controlador);
+			setContentPane(mostrarClienteVista);
+			setVisible(true);
+
+		} else if (e.getSource() == desasignarVehiculo) {
+			System.out.println("Evento recogido Desasignar vehiculo de cliente");
+			DesasignarVehiculoControladorInterfaz controlador = new DesasignarVehiculoControlador();
+			BajaVehiculoClienteVista bajaVehiculoClienteVista = new BajaVehiculoClienteVista(controlador);
+			setContentPane(bajaVehiculoClienteVista);
+			setVisible(true);
+		} else if (e.getSource() == modificarVehiculos) {
+			System.out.println("Evento recogido Desasignar vehiculo de cliente");
+			modificarVehiculoControladorInterfaz controlador = new ModificarVehiculoControlador();
+			ModificarVehiculoVista modificarVehiculoVista = new ModificarVehiculoVista();
+			setContentPane(modificarVehiculoVista);
+			setVisible(true);
+		} else if (e.getSource() == modificarCliente) {
+			System.out.println("Evento recogido modificar cliente");
+			ModificarClienteVista modificarClienteVista = new ModificarClienteVista();
+			setContentPane(modificarClienteVista);
+			setVisible(true);
+		}
+	}
 }
