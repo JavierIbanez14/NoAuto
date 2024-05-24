@@ -14,7 +14,7 @@ import noAuto.modelo.TipoUbicacion;
 public class API {
 
     private ArrayList<Vehiculo> vehiculos = new ArrayList<>();
-    private List<Cliente> clientes;
+    private static List<Cliente> clientes;
     private static API instancia = new API();
 
     private API() {
@@ -25,7 +25,8 @@ public class API {
         return instancia;
     }
 
-    public void altaVehiculo(double coste, TipoVehiculo tipoVehiculo, TipoEstado estado, TipoCargaVehiculo carga, TipoUbicacion ubicacion) {
+    public void altaVehiculo(double coste, TipoVehiculo tipoVehiculo, TipoEstado estado, TipoCargaVehiculo carga,
+            TipoUbicacion ubicacion) {
         Vehiculo vehiculo = new Vehiculo(coste, tipoVehiculo, estado, carga, ubicacion);
         vehiculos.add(vehiculo);
     }
@@ -66,34 +67,92 @@ public class API {
         return sb.toString();
     }
 
-    public void altaCliente(String nombre, String dni, int edad) {
-        Cliente cliente = new Cliente(nombre, dni, edad);
+    public void altaCliente(String nombre, String dni, int edad, int dinero) {
+        Cliente cliente = new Cliente(nombre, dni, edad, dinero);
         clientes.add(cliente);
-        cliente.altaCliente();
     }
 
-    public void bajaCliente(int codigoCliente) {
-        for (Cliente cliente : clientes) {
-            if (cliente.getCodigo() == codigoCliente) {
-                clientes.remove(cliente);
-                cliente.bajaCliente();
+    public static void bajaCliente(int codigo) {
+        Iterator<Cliente> iterator = clientes.iterator();
+        while (iterator.hasNext()) {
+            Cliente cliente = iterator.next();
+            if (cliente.getCodigo() == codigo) {
+                iterator.remove();
+                System.out.println("Cliente con código " + codigo + " dado de baja correctamente.");
                 return;
             }
         }
-        System.out.println("Cliente no encontrado.");
+        System.out.println("Cliente con código " + codigo + " no encontrado.");
     }
 
-    public String mostrarClientes() {
-        StringBuilder stringBuilder = new StringBuilder();
+    public String listarClientes() {
+        StringBuilder sb = new StringBuilder();
         for (Cliente cliente : clientes) {
-            stringBuilder.append("Código: ").append(cliente.getCodigo()).append("\n");
-            stringBuilder.append("Nombre: ").append(cliente.getNombre()).append("\n");
-            stringBuilder.append("DNI: ").append(cliente.getDni()).append("\n");
-            stringBuilder.append("Edad: ").append(cliente.getEdad()).append("\n");
-            stringBuilder.append("Dinero disponible: ").append(cliente.getDinero()).append("\n\n");
+            sb.append(cliente.toString()).append("\n");
         }
-        return stringBuilder.toString();
+        return sb.toString();
+    }
+
+    public void altaVehiculoAlCliente(int codigoCliente, int codigoVehiculo, int horas) {
+        Cliente cliente = buscarClientePorCodigo(codigoCliente);
+        if (cliente != null) {
+            Vehiculo vehiculo = buscarPorCodigo(codigoVehiculo);
+            if (vehiculo != null && vehiculo.getEstado() == TipoEstado.Disponible) {
+                double costeTotal = vehiculo.getCoste() * horas;
+                if (costeTotal <= cliente.getDinero()) {
+                    cliente.setDinero(cliente.getDinero() - costeTotal);
+                    vehiculo.setEstado(TipoEstado.Alquilado);
+                    cliente.setVehiculo(vehiculo);
+                    System.out.println("Vehículo dado de alta al cliente " + codigoCliente + ".");
+                } else {
+                    System.out.println("El coste total del vehículo excede el dinero disponible del cliente.");
+                }
+            } else {
+                System.out.println("Vehículo con código " + codigoVehiculo + " no encontrado o no disponible.");
+            }
+        } else {
+            System.out.println("Cliente con código " + codigoCliente + " no encontrado.");
+        }
+    }
+
+    public void bajaVehiculoAlCliente(int codigoCliente) {
+        Cliente cliente = buscarClientePorCodigo(codigoCliente);
+        if (cliente != null) {
+            Vehiculo vehiculo = cliente.getVehiculo();
+            if (vehiculo != null) {
+                vehiculo.setEstado(TipoEstado.Disponible);
+                cliente.setVehiculo(null);
+                System.out.println("Vehículo dado de baja al cliente " + codigoCliente + ".");
+            } else {
+                System.out.println("El cliente " + codigoCliente + " no tiene un vehículo asignado.");
+            }
+        } else {
+            System.out.println("Cliente con código " + codigoCliente + " no encontrado.");
+        }
+    }
+
+    public void mostrarQueVehiculoTieneElCliente(int codigoCliente) {
+        Cliente cliente = buscarClientePorCodigo(codigoCliente);
+        if (cliente != null) {
+            Vehiculo vehiculo = cliente.getVehiculo();
+            if (vehiculo != null) {
+                System.out.println("El cliente " + codigoCliente + " tiene el siguiente vehículo:");
+                System.out.println(vehiculo);
+            } else {
+                System.out.println("El cliente " + codigoCliente + " no tiene un vehículo asignado.");
+            }
+        } else {
+            System.out.println("Cliente con código " + codigoCliente + " no encontrado.");
+        }
+    }
+
+    public Cliente buscarClientePorCodigo(int codigo) {
+        for (Cliente cliente : clientes) {
+            if (cliente.getCodigo() == codigo) {
+                return cliente;
+            }
+        }
+        return null;
     }
 }
-
 

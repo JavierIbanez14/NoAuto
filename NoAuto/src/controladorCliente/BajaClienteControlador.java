@@ -2,27 +2,12 @@ package controladorCliente;
 
 import noAuto.principal.API;
 
-public class BajaClienteControlador implements ControladorInterfazCliente {
+public class BajaClienteControlador implements BajaClienteControladorInterfaz {
 
-    private final API api;
 
-    public BajaClienteControlador() {
-        this.api = API.getInstancia();
-    }
-
-    @Override
-    public void altaCliente(String nombre, String dni, int edad) {
-        // No implementado para este controlador
-    }
-
-    @Override
-    public void bajaCliente(int codigoCliente) {
-        api.bajaCliente(codigoCliente);
-    }
-
-    @Override
-    public String mostrarClientes() {
-        // No implementado para este controlador
-        return null;
-    }
+	public void bajaCliente(int codigo) {
+        System.out.println("Llamando al controlador de baja de Cliente");
+        API api = API.getInstancia();
+        api.bajaCliente(codigo);
+	}
 }

@@ -4,6 +4,9 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import controladorCliente.AltaClienteControladorInterfaz;
 
 public class AltaClienteVista extends JPanel {
 
@@ -17,10 +20,7 @@ public class AltaClienteVista extends JPanel {
     private JTextField dineroField;
     private JLabel nombreAlta;
 
-    /**
-     * Create the panel.
-     */
-    public AltaClienteVista() {
+    public AltaClienteVista(AltaClienteControladorInterfaz controlador) {
         setLayout(null);
         
         JLabel nombreLabel = new JLabel("Nombre");
@@ -66,5 +66,16 @@ public class AltaClienteVista extends JPanel {
         JButton finalizar = new JButton("Finalizar");
         finalizar.setBounds(305, 266, 89, 23);
         add(finalizar);
+        
+        finalizar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                String nombre = nombreField.getText();
+                String dni = dniField.getText();
+                int edad = Integer.parseInt(edadField.getText());
+                int dinero = Integer.parseInt(dineroField.getText());
+                
+                controlador.altaCliente(nombre, dni, edad, dinero);
+            }
+        });
     }
 }
