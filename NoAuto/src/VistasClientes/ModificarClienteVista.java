@@ -36,7 +36,7 @@ public class ModificarClienteVista extends JPanel {
         modificarClienteTitulo.setForeground(new Color(255, 255, 255));
         modificarClienteTitulo.setFont(new Font("Arial", Font.PLAIN, 20));
 
-        JLabel codigoLabel = new JLabel("Código:");
+        JLabel codigoLabel = new JLabel("Codigo:");
         codigoLabel.setForeground(new Color(255, 255, 255));
         codigoLabel.setFont(new Font("Arial", Font.PLAIN, 16));
         codigoField = new JTextField(10);
@@ -73,7 +73,7 @@ public class ModificarClienteVista extends JPanel {
 
                     controlador.modificarCliente(codigo, nombre, dni, edad, dinero);
                 } catch (NumberFormatException ex) {
-                    System.out.println("Error: Asegúrese de que el código, la edad y el dinero sean números válidos.");
+                    System.out.println("Error: Asegúrese de que el codigo, la edad y el dinero sean números válidos.");
                 }
             }
         });
@@ -82,7 +82,7 @@ public class ModificarClienteVista extends JPanel {
         lblNoautoAlquilerDe.setForeground(Color.WHITE);
         lblNoautoAlquilerDe.setFont(new Font("Arial", Font.ITALIC, 12));
 
-        // Crear el GroupLayout y configurar los componentes para centrar
+       
         GroupLayout layout = new GroupLayout(this);
         layout.setHorizontalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
