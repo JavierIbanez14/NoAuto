@@ -22,17 +22,17 @@ public class MostrarVehiculoVista extends JPanel {
         setLayout(null);
 
         textArea = new JTextArea();
-        textArea.setBounds(35, 24, 380, 153);
+        textArea.setBounds(21, 25, 536, 153);
         add(textArea);
 
         JButton mostrarVehiculosButton = new JButton("Mostrar Vehiculo");
-        mostrarVehiculosButton.setBounds(150, 205, 150, 23);
+        mostrarVehiculosButton.setBounds(227, 206, 150, 23);
         add(mostrarVehiculosButton);
         
         JLabel lblNoautoAlquilerDe = new JLabel("NoAuto alquiler de vehiculos sostenibles");
         lblNoautoAlquilerDe.setForeground(Color.WHITE);
         lblNoautoAlquilerDe.setFont(new Font("Arial", Font.ITALIC, 12));
-        lblNoautoAlquilerDe.setBounds(100, 275, 315, 14);
+        lblNoautoAlquilerDe.setBounds(179, 332, 315, 14);
         add(lblNoautoAlquilerDe);
 
         mostrarVehiculosButton.addActionListener(e -> {
